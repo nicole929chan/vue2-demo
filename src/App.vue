@@ -1,19 +1,16 @@
 <template>
   <div id="app">
-    <TheSchool />
-    <TheStudent />
+    <TheAnimation />
   </div>
 </template>
 
 <script>
-import TheSchool from "./components/TheSchool.vue";
-import TheStudent from "./components/TheStudent.vue";
+import TheAnimation from "./components/TheAnimation.vue";
 
 export default {
   name: "App",
   components: {
-    TheSchool,
-    TheStudent,
+    TheAnimation,
   },
 };
 </script>
