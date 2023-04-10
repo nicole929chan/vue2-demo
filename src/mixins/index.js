@@ -1,24 +1,26 @@
 import axios from "axios";
 const mixin = {
+  data() {
+    return {
+      // 變數挪來這
+      loading: false,
+      error: "",
+    };
+  },
   methods: {
-    // getEvents(search) {
-    //   this.loading = true;
-    //   let endpoint = `https://jsonplaceholder.typicode.com/posts?userId=${search}`;
+    async getEvents(search) {
+      try {
+        let res;
+        let endpoint = `https://jsonplaceholder.typicode.com/posts?userId=${search}`;
+        this.loading = true;
+        res = await axios.get(endpoint);
 
-    //   axios
-    //     .get(endpoint)
-    //     .then((res) => {
-    //       this.results = res.data;
-    //     })
-    //     .catch((err) => {
-    //       this.error = err.message;
-    //     })
-    //     .finally(() => (this.loading = false));
-    // },
-    getEvents(search) {
-      let endpoint = `https://jsonplaceholder.typicode.com/posts?userId=${search}`;
+        return res.data;
+      } catch (err) {
+        this.error = err.message;
+      }
 
-      return axios.get(endpoint); // 只須返回Promise
+      this.loading = false;
     },
   },
 };
