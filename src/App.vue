@@ -1,27 +1,18 @@
 <template>
   <div id="app">
-    <TheAnimation />
+    <EventList />
   </div>
 </template>
 
 <script>
-import TheAnimation from "./components/TheAnimation.vue";
+import EventList from "./components/EventList.vue";
 
 export default {
   name: "App",
   components: {
-    TheAnimation,
+    EventList,
   },
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
+<style></style>
